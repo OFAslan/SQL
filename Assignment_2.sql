@@ -119,7 +119,7 @@ FROM Actions
 WHERE Action = 'Order'
 GROUP BY Adv_Type, Action
 
---Let's get the conversion rate bu using above temporary tables.
+--Let's get the conversion rate by using above temporary tables.
 
 SELECT A.Adv_Type, CAST(ROUND((A.Cnt_Order * 0.1) / (B.Cnt_Adv_Type * 0.1),2)AS DECIMAL(10,2)) Conversion_Rate
 FROM #Total_Cnt_Order A, #Total_Cnt_Adv_Type B
